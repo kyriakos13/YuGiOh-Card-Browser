@@ -1,0 +1,16 @@
+
+<div class="card">
+    <img class="card-img-top" src="http://52.57.88.137/api/card_image/{{name}}" alt="Card image cap">
+    <div class="card-body">
+      <h6 class="card-title">{{name}}</h6>
+      <span class="badge" [ngClass]=
+      "{
+        'badge-success':card?.card_type === 'trap',
+        'badge-primary':card?.card_type === 'spell',
+        'badge-danger':card?.card_type === 'monster'
+      }" >{{card?.card_type}}</span>
+    </div>
+  </div>
+
+
+ 

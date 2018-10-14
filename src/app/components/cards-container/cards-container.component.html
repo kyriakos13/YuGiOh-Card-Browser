@@ -1,0 +1,30 @@
+<div >
+  <div class="container">
+    <div class="col-xs-12 col-md-12 col-lg-12">
+        <app-search
+          (toggleEvent)="toggle($event)"
+          (searchEvent)="search($event)"></app-search>
+        </div>
+      </div>
+      <br>
+    <app-filter
+      (updateEvent)="update($event)"
+      ></app-filter>
+  </div>
+<div class="text-center">
+    <div *ngIf="cards">
+        <div
+        *ngFor="let card of cards | async"
+        (click)="redirect(card)"
+        class="card-container">
+        <div *ngIf="card">
+          <app-card
+          [name]="card.name"></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
