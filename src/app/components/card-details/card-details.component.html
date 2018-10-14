@@ -1,0 +1,55 @@
+<div class="container">
+<div *ngIf="card">
+    <h1>{{card?.name}}</h1>
+  <div class="row">
+
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <img src="http://52.57.88.137/api/card_image/{{card?.name}}" alt="Invalid image">
+    </div>
+
+    <div class="col-sm-8 col-md-8 col-g-8 info">
+      <table class="table  table-dark">
+          <tr>
+              <td>Card Type: </td>
+              <td><span class="badge badge-danger">{{card?.card_type}}</span></td>
+            </tr>
+        <tr>
+        <tr>
+              <td>Level: </td>
+              <td>
+                <span class="badge badge-danger">{{card?.level}}</span>
+              </td>
+            </tr>
+        <tr>
+          <td>Attack: </td>
+          <td><span class="badge badge-danger">{{card?.atk}}</span></td>
+        </tr>
+        <tr>
+            <td>Defense: </td>
+            <td><span class="badge badge-success">{{card?.def}}</span></td>
+        </tr>
+        <tr>
+            <td>Family: </td>
+            <td><span class="badge" [ngClass]=
+              "{
+                'badge-danger': card.family === 'fire',
+                'badge-info': card.family === 'water',
+                'badge-success': card.family === 'earth',
+                'badge-primary': card.family === 'wind',
+                'badge-dark': card.family === 'dark',
+                'badge-light': card.family === 'light'
+              }" >{{card?.family}}</span></td>
+        </tr>
+        <tr>
+            <td>Type: </td>
+            <td><span class="badge badge-success">{{card?.type}}</span></td>
+        </tr>
+        <tr>
+            <td>Descirption: </td>
+            <td><p class="lead">{{card?.text}}</p></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
